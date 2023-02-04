@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.lang.reflect.Array;
 import java.util.*;
 
-public class test {
+public class q3 {
     public static class KeyNotFoundException extends Exception {
         public KeyNotFoundException() {
             System.out.println("KeyNotFound");
@@ -685,89 +685,6 @@ public class test {
     public static void main(String[] args) throws KeyAlreadyExistException, NullKeyException, KeyNotFoundException {
         COL106Dictionary<String, Integer> D = new COL106Dictionary<>(140);
 
-        D.insert("Delhi", 1);
-        D.insert("Mumabi", 2);
-        D.insert("Chennai", 3);
-        D.insert("Shimla", 4);
-        D.insert("Bangalore", 5);
-        D.insert("Dholakpur", 6);
-        D.insert("palampur", 7);
-        D.insert("ghoda", 8);
-        D.insert("patna", 9);
-        D.insert("indore", 10);
-        D.insert("bhatinda", 11);
-        D.insert("faridabad", 12);
-        D.insert("sikar", 13);
-        D.insert("dhanbad", 14);
-        D.insert("Westbengal", 15);
-        // PRINT DICTIONARY LINKED LIST.
-        for (int i = 0; i < D.dict.size(); i++) {
-            DictionaryEntry<String, Integer> entry = D.dict.get(i);
-            System.out.print(entry.key + "," + entry.value + " --> ");
-        }
-        System.out.println("null");
-        System.out.println();
+        
 
-        // PRINT HASHTABLE OF DICTIONARY.
-        for (int j = 0; j < 140; j++) {
-            if (D.hashTable[j].size() != 0) {
-                System.out.print("for bucket " + j + " : ");
-                for (int i = 0; i < D.hashTable[j].size(); i++) {
-                    HashTableEntry<String, Integer> entry = D.hashTable[j].get(i);
-                    System.out.print(entry.key + "," + entry.dictEntry + " --> ");
-                }
-                System.out.print("null");
-            } else {
-                System.out.print("for bucket " + j + " : ");
-                System.out.print("null");
-            }
-            System.out.println();
-        }
-        System.out.println();
-        System.out.println();
-        System.out.println(D.update("Mumabi", 106));
-        // D.insert("Saharanpur",12);
-        // D.insert("Saharanpur",12);
-        // System.out.println(D.exist("Mumabi"));
-        // D.insert("Saharanpur", 11);
-        // D.insert("agra",132);
-        // D.searchInDictLL("Chennai");
-        // System.out.println(D.searchInDictLL("Chenna"));
-        // Integer[] arr = D.values(Integer.class);
-        // for(int i=0 ; i<arr.length;i++){
-        // System.out.print(arr[i]+ " -> ");
-        // }
-        // System.out.println();
-        // String[] arr1 = D.keys(String.class);
-        // for(int i=0 ; i<arr1.length;i++){
-        // System.out.print(arr1[i]+ " -> ");
-        // }
-
-        System.out.println();
-        System.out.println();
-        // PRINT DICTIONARY LINKED LIST.
-        for (int i = 0; i < D.dict.size(); i++) {
-            DictionaryEntry<String, Integer> entry = D.dict.get(i);
-            System.out.print(entry.key + "," + entry.value + " --> ");
-        }
-        System.out.println("null");
-        System.out.println();
-
-        // PRINT HASHTABLE OF DICTIONARY.
-        for (int j = 0; j < 140; j++) {
-            if (D.hashTable[j].size() != 0) {
-                System.out.print("for bucket " + j + " : ");
-                for (int i = 0; i < D.hashTable[j].size(); i++) {
-                    HashTableEntry<String, Integer> entry = D.hashTable[j].get(i);
-                    System.out.print(entry.key + "," + entry.dictEntry + " --> ");
-                }
-                System.out.print("null");
-            } else {
-                System.out.print("for bucket " + j + " : ");
-                System.out.print("null");
-            }
-            System.out.println();
-        }
-
-    }
 }
