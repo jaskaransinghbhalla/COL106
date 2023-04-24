@@ -1,0 +1,16 @@
+// Test Case 2
+    PointQuadtree obj = new PointQuadtree();
+    System.out.println(obj.insert(new CellTower(0, 0, 25)));
+    System.out.println(obj.insert(new CellTower(0, 7, 9)));
+    System.out.println(obj.insert(new CellTower(3, 0, 4)));
+    System.out.println(obj.insert(new CellTower(-2, 0, 9)));
+    System.out.println(obj.insert(new CellTower(0, -4, 3)));
+    System.out.println();
+
+    obj.printer();
+
+    System.out.println(obj.cellTowerAt(0, 0));
+    System.out.println(obj.cellTowerAt(0, 7));
+    System.out.println(obj.cellTowerAt(3, 0));
+    System.out.println(obj.cellTowerAt(-2, 0));
+    System.out.println(obj.cellTowerAt(0, -4));

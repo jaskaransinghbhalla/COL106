@@ -1,0 +1,64 @@
+// Initialize Ladders
+    int laddersUtil[] = new int[N + 1];
+    ArrayList<ArrayList<Integer>> laddersNew = new ArrayList<>();
+    int OptimalMoves = visitedFromSource[N] ? distanceFromSource[N] : -1;
+
+    // Initialize Result
+    int result[] = new int[2];
+    result[0] = -1;
+    result[1] = -1;
+
+    // Handle Optimal Moves = -1;
+    if (OptimalMoves == -1) {
+      return result;
+    }
+
+    for (int i = 0; i < ladders.length; i++) {
+      if (ladders[i] != -1) {
+        laddersUtil[i] = finalPositionBestSnake(ladders[i], snakes, ladders);
+        ArrayList<Integer> temp = new ArrayList<>();
+        temp.add(i);
+        temp.add(finalPositionBestSnake(ladders[i], snakes, ladders));
+        laddersNew.add(temp);
+      } else {
+        laddersUtil[i] = -1;
+      }
+    }
+
+    for (int i = 0; i < laddersNew.size(); i++) {
+      for (int j = 0; j < laddersNew.size(); j++) {
+        if (
+          i != j &&
+          laddersNew.get(i).get(0) < laddersNew.get(j).get(0) &&
+          laddersNew.get(j).get(0) < laddersNew.get(i).get(1) &&
+          laddersNew.get(i).get(1) < laddersNew.get(j).get(1)
+        ) {
+          int x = laddersNew.get(i).get(1);
+          int y = laddersNew.get(j).get(0);
+          if (result[0] == -1 && result[1] == -1) {
+            result[0] = x;
+            result[1] = y;
+            OptimalMoves = distanceFromSource[x] + distanceFromDestination[y];
+          } else {
+            if (
+              distanceFromSource[x] + distanceFromDestination[y] < OptimalMoves
+            ) {
+              OptimalMoves = distanceFromSource[x] + distanceFromDestination[y];
+              result[0] = x;
+              result[1] = y;
+            }
+          }
+        }
+      }
+    }
+    return result;
+
+
+     private int finalPositionBestSnake(int i, int snakesT[], int laddersT[]) {
+    if (i == 100 || i == 1 || (snakesT[i] == -1 && laddersT[i] == -1)) {
+      return i;
+    }
+    return (snakesT[i] != -1)
+      ? finalPositionBestSnake(snakesT[i], snakesT, laddersT)
+      : finalPositionBestSnake(laddersT[i], snakesT, laddersT);
+  }
