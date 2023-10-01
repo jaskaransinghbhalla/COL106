@@ -1,6 +1,6 @@
-# COL106
-- COL106 is the Data structures and Algorithms course at IIT Delhi, New Delhi, India
-
+# COL106 | Data Structures & Algorithms
+**COL106 is the Data structures and Algorithms course at IIT Delhi, New Delhi, India**
+  
 ## Assignment 1
 - Frequency of Letters
 - Method Overloading
